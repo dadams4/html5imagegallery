@@ -449,14 +449,14 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
-  width: 66.66%;
+  width: 33.33%;
   display: none;
   float: left;
   overflow: hidden;
 }
-@media screen and (max-width: 1800px) {
+@media screen and (max-width: 992px) {
   #portfoliolist .portfolio {
-    width: 100% !important;
+    width: 50% !important;
   }
 }
 @media screen and (max-width: 768px) {

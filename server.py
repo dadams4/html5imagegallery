@@ -10,12 +10,11 @@ UPLOADS_DEFAULT_DEST = "/home/ubuntu/workspace/ImageGallery/static/Upload"
 files = UploadSet('files', ("png", "jpg", "jpeg"))
 
 app = Flask (__name__)
-app.secret_key = os.urandom(24).hex()
+#app.secret_key = os.urandom(24).hex()
+app.secret_key = os.urandom(24).encode('hex')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['UPLOADS_DEFAULT_DEST'] = UPLOADS_DEFAULT_DEST
 
-
- 
 configure_uploads(app, files)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -52,9 +51,10 @@ def uploadSuccess():
             
         if file and allowed_file(file.filename):
             
+            
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-       
+
     pictureDictionary = os.listdir('static/Uploads/')
     pictureDictionary = ['static/Uploads/' + file for file in pictureDictionary]
             

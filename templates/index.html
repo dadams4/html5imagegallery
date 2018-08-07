@@ -67,9 +67,9 @@
 		<div class="js-fullheight fh5co-table">
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="portfolio.html">Contact</a></li>
-					<li><a href="/upload">Upload</a></li>
+					<li><a href="/">Home</a></li>
+					<!---li><a href="portfolio.html">Contact</a></li--->
+					<li><a href="/upload">Upload Pictures</a></li>
 					<!--li><a href="team.html">Team</a></li>
 					<li><a href="contact.html">Contact</a></li-->
 				</ul>
@@ -108,19 +108,19 @@
 				</ul>
 				{% for picture in pictureDictionary %}
 				<div id="portfoliolist" class="animate-box">
-					
 					<div class="portfolio all logo" data-cat="logo">
 						<div class="portfolio-wrapper">				
 							<img src="{{picture}}" style = "height: 1080; width: 1920px">
 							<div class="label">
-								<div class="label-text">
-									<a class="text-title">View Full Image</a>
-									<!--span class="text-category">Logo</span-->
+								<!--div class="label-text">
+									<a class="text-title"></a>
+
+
 								</div>
-								<div class="label-bg"></div>
+								<div class="label-bg"></div-->
 							</div>
 						</div>
-					</div>				
+					</div>	
 					{% endfor %}
 					<!--div class="portfolio all card web" data-cat="card">
 						<div class="portfolio-wrapper">			
@@ -301,6 +301,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
+							<p>Arc Interiors by Rob Castles</p>
 						</div>
 						<div class="col-md-6 social-text-align">
 							<p class="fh5co-social-icons">
