@@ -1,6 +1,6 @@
 import os
-import psycopg2
-import psycopg2.extras
+#import psycopg2
+#import psycopg2.extras
 
 from flask import Flask, render_template, request, redirect, flash
 from flask_uploads import UploadSet, configure_uploads
@@ -13,7 +13,8 @@ UPLOADS_DEFAULT_DEST = "/home/ubuntu/workspace/ImageGallery/static/Upload"
 files = UploadSet('files', ("png", "jpg", "jpeg"))
 
 app = Flask (__name__)
-app.secretkey = os.urandom(24).encode('hex')
+app.secret_key = os.urandom(24).hex()
+#app.secret_key = os.urandom(24).encode('hex')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['UPLOADS_DEFAULT_DEST'] = UPLOADS_DEFAULT_DEST
 
@@ -72,5 +73,6 @@ def homePage():
     return render_template("index.html", pictureDictionary = pictureDictionary)
 
 if __name__ == '__main__':
-    
-    app.run(host='0.0.0.0',port=8080, debug = True)
+    #IP = '35.199.24.179' 
+    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT',8080)), debug = True)
+    #app.run(host = '0.0.0.0', port = 8080, debug = True)
